@@ -21,10 +21,10 @@ RUN set -ex \
 		bison \
 		dpkg-dev \
 		libgdbm-dev \
-		libjemalloc-dev \
 		ruby \
 	' \
 	&& apt-get update \
+	&& apt-get install -y --no-install-recommends libjemalloc-dev \
 	&& apt-get install -y --no-install-recommends $buildDeps \
 	&& rm -rf /var/lib/apt/lists/* \
 	\
